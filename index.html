@@ -36,11 +36,18 @@
 
         /* ルビ（ふりがな）のスタイル調整 */
         ruby rt {
-            font-size: 0.5em; /* 親文字に対するサイズ */
-            font-weight: 500;
-            color: #9ca3af; /* text-gray-400 */
-            transform: translateY(-0.1em); /* 位置を上に調整（間隔を狭める） */
+            font-size: 0.4em;
+            transform: translateY(-0.05em);
         }
+
+        /* PC用 */
+        @media (min-width: 768px) {
+            ruby rt {
+                font-size: 0.5em;
+                transform: translateY(-0.1em);
+            }
+        }
+
         ruby {
             ruby-position: over;
         }
