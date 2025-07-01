@@ -76,22 +76,64 @@
         input[type="date"]::-webkit-calendar-picker-indicator {
             filter: invert(1);
         }
+
+        /* モバイルメニューのスタイル */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
 
     <!-- ヘッダー -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-sm">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-white cursor-pointer">Tool in One</a>
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl sm:text-2xl font-bold text-white cursor-pointer">Tool in One</a>
+            
+            <!-- デスクトップナビゲーション -->
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="#hero" class="text-gray-300 hover:text-white transition-colors">ホーム</a>
                 <a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors">仕組み</a>
                 <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">料金</a>
             </nav>
-            <button class="cosmic-gradient-bg text-white font-bold py-2 px-6 rounded-lg hover:opacity-90 transition-opacity">
+            
+            <!-- デスクトップ問い合わせボタン -->
+            <button class="hidden md:block cosmic-gradient-bg text-white font-bold py-2 px-6 rounded-lg hover:opacity-90 transition-opacity">
                 問い合わせ
             </button>
+            
+            <!-- モバイルメニューボタン -->
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 right-0 w-64 h-full bg-gray-900/95 backdrop-blur-sm z-50">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold text-white">メニュー</span>
+                    <button id="mobile-menu-close" class="text-white p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="space-y-4">
+                    <a href="#hero" class="block text-gray-300 hover:text-white transition-colors py-2">ホーム</a>
+                    <a href="#how-it-works" class="block text-gray-300 hover:text-white transition-colors py-2">仕組み</a>
+                    <a href="#pricing" class="block text-gray-300 hover:text-white transition-colors py-2">料金</a>
+                </nav>
+                <button class="w-full mt-8 cosmic-gradient-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">
+                    問い合わせ
+                </button>
+            </div>
         </div>
     </header>
 
@@ -100,14 +142,14 @@
         <section id="hero" class="swipe-section text-center overflow-hidden">
             <div class="absolute inset-0 cosmic-gradient-bg opacity-30 blur-3xl"></div>
             <div class="relative px-4">
-                <h2 class="text-5xl md:text-7xl font-black text-white leading-tight fade-in" style="animation-delay: 0.2s;">
+                <h2 class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-tight fade-in" style="animation-delay: 0.2s;">
                     全てのToolを<ruby>One<rt>ひとつ</rt></ruby>に
                 </h2>
-                <p class="mt-8 mx-auto max-w-2xl text-lg md:text-xl text-gray-400 fade-in" style="animation-delay: 0.4s;">
+                <p class="mt-6 sm:mt-8 mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-gray-400 fade-in px-4" style="animation-delay: 0.4s;">
                     たった一つのメールアドレスで多数のアプリを統合
                 </p>
-                <div class="mt-10 flex justify-center items-center space-x-4 fade-in" style="animation-delay: 0.6s;">
-                    <button class="cosmic-gradient-bg text-white font-bold py-3 px-8 rounded-lg text-lg hover:opacity-90 transition-opacity">
+                <div class="mt-8 sm:mt-10 flex justify-center items-center space-x-4 fade-in" style="animation-delay: 0.6s;">
+                    <button class="cosmic-gradient-bg text-white font-bold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg hover:opacity-90 transition-opacity">
                         今すぐ問い合わせ
                     </button>
                 </div>
@@ -116,62 +158,64 @@
 
         <!-- "仕組み" セクション -->
         <section id="how-it-works" class="swipe-section">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h3 class="text-3xl md:text-4xl font-black text-white">全てがTool in Oneで繋がる</h3>
-                    <p class="mt-4 max-w-3xl mx-auto text-gray-400">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12 sm:mb-16">
+                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-white">全てがTool in Oneで繋がる</h3>
+                    <p class="mt-4 max-w-3xl mx-auto text-gray-400 text-sm sm:text-base px-4">
                         Tool in Oneがハブとなり、バラバラだったToolの登録と請求を一つにまとめます。
                     </p>
                 </div>
 
-                <div class="flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-8">
+                <div class="flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-8">
                      <!-- 左側: ツール群 -->
-                    <div class="w-full sm:w-2/3 md:w-1/4 p-8 bg-gray-800 rounded-2xl border border-gray-700 space-y-6 relative">
+                    <div class="w-full max-w-sm lg:w-1/4 p-6 sm:p-8 bg-gray-800 rounded-2xl border border-gray-700 space-y-4 sm:space-y-6 relative">
                          <div class="absolute -top-4 -left-4 w-16 h-16 cosmic-gradient-bg rounded-full opacity-20 blur-2xl"></div>
-                        <p class="text-center font-bold text-lg text-white">各種サービス</p>
+                        <p class="text-center font-bold text-base sm:text-lg text-white">各種サービス</p>
                         <!-- ChatGPT Logo -->
-                        <div class="flex items-center space-x-4 p-4 bg-gray-900 rounded-lg">
-                            <svg class="w-8 h-8 text-white flex-shrink-0" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 10.1651C22.4578 9.2423 22.5641 8.29062 22.5641 7.31953C22.5641 3.23047 19.3336 0 15.2445 0C12.1289 0 9.49219 1.73438 8.04688 4.31641C7.45312 4.56641 6.89844 4.88281 6.375 5.23828C3.80469 6.82031 2.34375 9.44531 2.34375 12.4219C2.34375 16.0312 4.81641 19.043 8.20312 20.2148C8.75781 20.5312 9.38281 20.8125 10.0312 21.0117C9.25781 22.125 8.79688 23.4727 8.79688 24.9062V25.0312C8.79688 25.1836 8.92188 25.3086 9.07422 25.3086H9.49219C9.64453 25.3086 9.76953 25.1836 9.76953 25.0312V24.9062C9.76953 23.1328 10.375 21.4688 11.4141 20.1797C11.4805 20.0859 11.5234 19.9609 11.5234 19.8359V18.5391C11.5234 18.4453 11.4805 18.3516 11.4141 18.2891C9.83203 16.6797 8.90625 14.4844 8.90625 12.1094C8.90625 10.5156 9.35156 9.04688 10.1523 7.78125C11.125 7.60547 12.1406 7.5 13.1875 7.5C14.2344 7.5 15.2188 7.60547 16.1562 7.78125C16.957 9.04688 17.3828 10.5156 17.3828 12.1094C17.3828 14.4844 16.457 16.6797 14.875 18.2891C14.8086 18.3516 14.7656 18.4453 14.7656 18.5391V19.8359C14.7656 19.9609 14.8086 20.0859 14.875 20.1797C15.9141 21.4688 16.5234 23.1328 16.5234 24.9062V25.0312C16.5234 25.1836 16.6484 25.3086 16.8008 25.3086H17.2188C17.3711 25.3086 17.4961 25.1836 17.4961 25.0312V24.9062C17.4961 23.4727 17.0352 22.125 16.2617 21.0117C16.7969 20.7617 17.2969 20.4453 17.7578 20.0859C17.9805 20.6172 18.125 21.1875 18.125 21.7969V21.9219C18.125 22.0742 18.25 22.1992 18.3945 22.1992H18.8203C18.9727 22.1992 19.0977 22.0742 19.0977 21.9219V21.7969C19.0977 20.9766 18.9219 20.1953 18.5703 19.4648C19.0312 19.1484 19.457 18.793 19.8359 18.3984C21.7031 16.6797 22.5641 14.0547 22.5641 11.0781C22.5641 10.2266 22.4688 9.41406 22.2819 8.60156C22.2819 8.60156 22.2819 10.1651 22.2819 10.1651Z"/></svg>
-                            <span class="font-semibold text-white">ChatGPT</span>
+                        <div class="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gray-900 rounded-lg">
+                            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white flex-shrink-0" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 10.1651C22.4578 9.2423 22.5641 8.29062 22.5641 7.31953C22.5641 3.23047 19.3336 0 15.2445 0C12.1289 0 9.49219 1.73438 8.04688 4.31641C7.45312 4.56641 6.89844 4.88281 6.375 5.23828C3.80469 6.82031 2.34375 9.44531 2.34375 12.4219C2.34375 16.0312 4.81641 19.043 8.20312 20.2148C8.75781 20.5312 9.38281 20.8125 10.0312 21.0117C9.25781 22.125 8.79688 23.4727 8.79688 24.9062V25.0312C8.79688 25.1836 8.92188 25.3086 9.07422 25.3086H9.49219C9.64453 25.3086 9.76953 25.1836 9.76953 25.0312V24.9062C9.76953 23.1328 10.375 21.4688 11.4141 20.1797C11.4805 20.0859 11.5234 19.9609 11.5234 19.8359V18.5391C11.5234 18.4453 11.4805 18.3516 11.4141 18.2891C9.83203 16.6797 8.90625 14.4844 8.90625 12.1094C8.90625 10.5156 9.35156 9.04688 10.1523 7.78125C11.125 7.60547 12.1406 7.5 13.1875 7.5C14.2344 7.5 15.2188 7.60547 16.1562 7.78125C16.957 9.04688 17.3828 10.5156 17.3828 12.1094C17.3828 14.4844 16.457 16.6797 14.875 18.2891C14.8086 18.3516 14.7656 18.4453 14.7656 18.5391V19.8359C14.7656 19.9609 14.8086 20.0859 14.875 20.1797C15.9141 21.4688 16.5234 23.1328 16.5234 24.9062V25.0312C16.5234 25.1836 16.6484 25.3086 16.8008 25.3086H17.2188C17.3711 25.3086 17.4961 25.1836 17.4961 25.0312V24.9062C17.4961 23.4727 17.0352 22.125 16.2617 21.0117C16.7969 20.7617 17.2969 20.4453 17.7578 20.0859C17.9805 20.6172 18.125 21.1875 18.125 21.7969V21.9219C18.125 22.0742 18.25 22.1992 18.3945 22.1992H18.8203C18.9727 22.1992 19.0977 22.0742 19.0977 21.9219V21.7969C19.0977 20.9766 18.9219 20.1953 18.5703 19.4648C19.0312 19.1484 19.457 18.793 19.8359 18.3984C21.7031 16.6797 22.5641 14.0547 22.5641 11.0781C22.5641 10.2266 22.4688 9.41406 22.2819 8.60156C22.2819 8.60156 22.2819 10.1651 22.2819 10.1651Z"/></svg>
+                            <span class="font-semibold text-white text-sm sm:text-base">ChatGPT</span>
                         </div>
                         <!-- Microsoft 365 Logo -->
-                        <div class="flex items-center space-x-4 p-4 bg-gray-900 rounded-lg">
-                           <svg class="w-8 h-8 text-white flex-shrink-0" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <div class="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gray-900 rounded-lg">
+                           <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white flex-shrink-0" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.13 11.13H1.05V1.05h10.08v10.08zm.84-10.08v10.08h10.08V1.05H11.97zM1.05 12.87h10.08v10.08H1.05V12.87zm10.92 0h10.08v10.08H11.97V12.87z"/>
                            </svg>
-                           <span class="font-semibold text-white">Microsoft 365</span>
+                           <span class="font-semibold text-white text-sm sm:text-base">Microsoft 365</span>
                         </div>
-                        <div class="text-center pt-2"><p class="text-gray-400">and more...</p></div>
+                        <div class="text-center pt-2"><p class="text-gray-400 text-sm">and more...</p></div>
                     </div>
                     
-                    <!-- Arrow -->
-                    <svg class="w-12 h-12 md:w-20 md:h-20 text-gray-600 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    <!-- Arrow (モバイルでは縦向き) -->
+                    <svg class="w-8 h-8 lg:w-20 lg:h-20 text-gray-600 lg:hidden transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    <svg class="w-12 h-12 md:w-20 md:h-20 text-gray-600 hidden lg:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                     
                     <!-- Tool in One Box -->
-                    <div class="w-52 h-52 md:w-60 md:h-60 mx-4 cosmic-gradient-bg rounded-3xl flex items-center justify-center text-center p-4 glowing-box z-10 flex-shrink-0">
-                        <span class="text-white text-4xl font-black">Tool in One</span>
+                    <div class="w-40 h-40 sm:w-52 sm:h-52 lg:w-60 lg:h-60 mx-4 cosmic-gradient-bg rounded-3xl flex items-center justify-center text-center p-4 glowing-box z-10 flex-shrink-0">
+                        <span class="text-white text-2xl sm:text-4xl font-black">Tool in One</span>
                     </div>
 
-                    <!-- Arrow -->
-                     <svg class="w-12 h-12 md:w-20 md:h-20 text-gray-600 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    <!-- Arrow (モバイルでは縦向き) -->
+                     <svg class="w-8 h-8 lg:w-20 lg:h-20 text-gray-600 lg:hidden transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                     <svg class="w-12 h-12 md:w-20 md:h-20 text-gray-600 hidden lg:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                     
                      <!-- Right side: Consolidated Output -->
-                    <div class="w-full sm:w-2/3 md:w-1/4 p-8 bg-gray-800 rounded-2xl border border-gray-700 space-y-6 relative">
+                    <div class="w-full max-w-sm lg:w-1/4 p-6 sm:p-8 bg-gray-800 rounded-2xl border border-gray-700 space-y-4 sm:space-y-6 relative">
                         <div class="absolute -top-4 -right-4 w-16 h-16 cosmic-gradient-bg rounded-full opacity-20 blur-2xl"></div>
                         <!-- One Email Address -->
-                        <div class="p-4 bg-gray-900 rounded-lg text-center">
-                            <svg class="w-8 h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <span class="font-semibold text-white whitespace-nowrap">一つのメールアドレス</span>
+                        <div class="p-3 sm:p-4 bg-gray-900 rounded-lg text-center">
+                            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span class="font-semibold text-white text-sm sm:text-base">一つのメールアドレス</span>
                         </div>
                         <!-- One JPY Payment -->
-                        <div class="p-4 bg-gray-900 rounded-lg text-center">
-                            <svg class="w-8 h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8l3 5m0 0l3-5m-3 5v4m-3-5h6.062C17.24 8 17.112 11.533 15 13.653c-.703.702-1.623 1.054-2.73 1.152A5.963 5.963 0 019 14.5c-3.314 0-6-2.686-6-6s2.686-6 6-6c1.657 0 3.157.672 4.243 1.757"></path></svg>
-                            <span class="font-semibold text-white whitespace-nowrap">１回の円払い</span>
+                        <div class="p-3 sm:p-4 bg-gray-900 rounded-lg text-center">
+                            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8l3 5m0 0l3-5m-3 5v4m-3-5h6.062C17.24 8 17.112 11.533 15 13.653c-.703.702-1.623 1.054-2.73 1.152A5.963 5.963 0 019 14.5c-3.314 0-6-2.686-6-6s2.686-6 6-6c1.657 0 3.157.672 4.243 1.757"></path></svg>
+                            <span class="font-semibold text-white text-sm sm:text-base">１回の円払い</span>
                         </div>
                         <!-- User Collaboration -->
-                        <div class="p-4 bg-gray-900 rounded-lg text-center">
-                            <svg class="w-8 h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.93M9 21a6 6 0 01-6-6v-1a6 6 0 016-6v1a6 6 0 016 6v-1a6 6 0 01-6-6z"></path></svg>
-                            <span class="font-semibold text-white whitespace-nowrap">ユーザー同士の連携</span>
+                        <div class="p-3 sm:p-4 bg-gray-900 rounded-lg text-center">
+                            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.93M9 21a6 6 0 01-6-6v-1a6 6 0 016-6v1a6 6 0 016 6v-1a6 6 0 01-6-6z"></path></svg>
+                            <span class="font-semibold text-white text-sm sm:text-base">ユーザー同士の連携</span>
                         </div>
                     </div>
 
@@ -181,36 +225,36 @@
 
         <!-- 料金シミュレーターセクション -->
         <section id="pricing" class="swipe-section bg-gray-800/50 pt-20">
-            <div class="container mx-auto px-4 py-12">
+            <div class="container mx-auto px-4 py-8 sm:py-12">
                 <div class="text-center mb-6">
-                    <h3 class="text-3xl md:text-4xl font-black text-white">料金シミュレーター</h3>
-                    <p class="mt-4 max-w-2xl mx-auto text-gray-400">ご利用になるサービスと期間を選んで、料金をご確認ください。</p>
+                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-white">料金シミュレーター</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-gray-400 text-sm sm:text-base px-4">ご利用になるサービスと期間を選んで、料金をご確認ください。</p>
                 </div>
 
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 bg-gray-900/50 p-8 rounded-2xl border border-gray-700">
+                <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 bg-gray-900/50 p-4 sm:p-8 rounded-2xl border border-gray-700">
                     
                     <!-- Left Column: Inputs -->
-                    <div class="space-y-8">
+                    <div class="space-y-6 sm:space-y-8">
                         <div>
-                            <h4 class="text-xl font-bold text-white mb-4">1. サービスを選択</h4>
+                            <h4 class="text-lg sm:text-xl font-bold text-white mb-4">1. サービスを選択</h4>
                             <div id="service-selection" class="space-y-3">
                                 <!-- Service checkboxes will be inserted here by JS -->
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-xl font-bold text-white mb-4">2. ご利用終了日を選択</h4>
+                            <h4 class="text-lg sm:text-xl font-bold text-white mb-4">2. ご利用終了日を選択</h4>
                             <input type="date" id="end-date" class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-purple-500 focus:outline-none">
                         </div>
                     </div>
 
                     <!-- Right Column: Results -->
-                    <div class="bg-gray-800 p-8 rounded-2xl flex flex-col justify-center items-center text-center">
-                        <h4 class="text-lg font-bold text-gray-400 mb-4">見積り料金</h4>
-                        <div id="price-display" class="cosmic-gradient-text text-5xl md:text-6xl font-black mb-4">
+                    <div class="bg-gray-800 p-6 sm:p-8 rounded-2xl flex flex-col justify-center items-center text-center">
+                        <h4 class="text-base sm:text-lg font-bold text-gray-400 mb-4">見積り料金</h4>
+                        <div id="price-display" class="cosmic-gradient-text text-4xl sm:text-5xl md:text-6xl font-black mb-4">
                             ¥0
                         </div>
-                        <p id="calculation-details" class="text-gray-400 text-sm h-10"></p>
-                        <button class="w-full mt-6 cosmic-gradient-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">
+                        <p id="calculation-details" class="text-gray-400 text-xs sm:text-sm h-8 sm:h-10"></p>
+                        <button class="w-full mt-6 cosmic-gradient-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity text-sm sm:text-base">
                             この内容で問い合わせる
                         </button>
                     </div>
@@ -223,8 +267,29 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Menu ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('open');
+            });
+
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+
+            // Close menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+
             // --- Page scrolling ---
-            const navLinks = document.querySelectorAll('header nav a, header a.text-2xl');
+            const navLinks = document.querySelectorAll('header nav a, header a.text-xl, header a.text-2xl');
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -238,11 +303,11 @@
 
             // --- Pricing Calculator ---
             const servicesData = [
-                { id: 'chatgpt', name: 'ChatGPT', price: 30, currency: 'USD', icon: `<svg class="w-6 h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 10.1651C22.4578 9.2423 22.5641 8.29062 22.5641 7.31953C22.5641 3.23047 19.3336 0 15.2445 0C12.1289 0 9.49219 1.73438 8.04688 4.31641C7.45312 4.56641 6.89844 4.88281 6.375 5.23828C3.80469 6.82031 2.34375 9.44531 2.34375 12.4219C2.34375 16.0312 4.81641 19.043 8.20312 20.2148C8.75781 20.5312 9.38281 20.8125 10.0312 21.0117C9.25781 22.125 8.79688 23.4727 8.79688 24.9062V25.0312C8.79688 25.1836 8.92188 25.3086 9.07422 25.3086H9.49219C9.64453 25.3086 9.76953 25.1836 9.76953 25.0312V24.9062C9.76953 23.1328 10.375 21.4688 11.4141 20.1797C11.4805 20.0859 11.5234 19.9609 11.5234 19.8359V18.5391C11.5234 18.4453 11.4805 18.3516 11.4141 18.2891C9.83203 16.6797 8.90625 14.4844 8.90625 12.1094C8.90625 10.5156 9.35156 9.04688 10.1523 7.78125C11.125 7.60547 12.1406 7.5 13.1875 7.5C14.2344 7.5 15.2188 7.60547 16.1562 7.78125C16.957 9.04688 17.3828 10.5156 17.3828 12.1094C17.3828 14.4844 16.457 16.6797 14.875 18.2891C14.8086 18.3516 14.7656 18.4453 14.7656 18.5391V19.8359C14.7656 19.9609 14.8086 20.0859 14.875 20.1797C15.9141 21.4688 16.5234 23.1328 16.5234 24.9062V25.0312C16.5234 25.1836 16.6484 25.3086 16.8008 25.3086H17.2188C17.3711 25.3086 17.4961 25.1836 17.4961 25.0312V24.9062C17.4961 23.4727 17.0352 22.125 16.2617 21.0117C16.7969 20.7617 17.2969 20.4453 17.7578 20.0859C17.9805 20.6172 18.125 21.1875 18.125 21.7969V21.9219C18.125 22.0742 18.25 22.1992 18.3945 22.1992H18.8203C18.9727 22.1992 19.0977 22.0742 19.0977 21.9219V21.7969C19.0977 20.9766 18.9219 20.1953 18.5703 19.4648C19.0312 19.1484 19.457 18.793 19.8359 18.3984C21.7031 16.6797 22.5641 14.0547 22.5641 11.0781C22.5641 10.2266 22.4688 9.41406 22.2819 8.60156C22.2819 8.60156 22.2819 10.1651 22.2819 10.1651Z"/></svg>` },
-                { id: 'ms365', name: 'Microsoft 365', price: 2740, currency: 'JPY', icon: `<svg class="w-6 h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11.13 11.13H1.05V1.05h10.08v10.08zm.84-10.08v10.08h10.08V1.05H11.97zM1.05 12.87h10.08v10.08H1.05V12.87zm10.92 0h10.08v10.08H11.97V12.87z"/></svg>` },
-                { id: 'cursor', name: 'Cursor', price: 40, currency: 'USD', icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>` },
-                { id: 'github', name: 'Github', price: 4, currency: 'USD', icon: `<svg class="w-6 h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>` },
-                { id: 'google-workspace', name: 'Google Workspace', price: 1900, currency: 'JPY', icon: `<svg class="w-6 h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.18,15.68h0c-1.89,0-3.62-1.07-4.22-2.73h4.22v-2.31h-6.73c-.11-.63-.16-1.28-.16-1.95s.05-1.32.16-1.95h6.73v-2.31h-4.22c.6-1.66,2.33-2.73,4.22-2.73,1.07,0,2.05.39,2.78,1.06l1.64-1.64c-1.18-1.1-2.79-1.78-4.42-1.78-2.69,0-5.06,1.52-6.19,3.81h-2.27v2.31h1.96c-.06.65-.09,1.3-.09,1.95s.03,1.3,.09,1.95h-1.96v2.31h2.27c1.13,2.29,3.5,3.81,6.19,3.81,1.63,0,3.24-.68,4.42-1.78l-1.64-1.64c-.73.67-1.71,1.06-2.78,1.06Z"/></svg>` },
+                { id: 'chatgpt', name: 'ChatGPT', price: 30, currency: 'USD', icon: `<svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 10.1651C22.4578 9.2423 22.5641 8.29062 22.5641 7.31953C22.5641 3.23047 19.3336 0 15.2445 0C12.1289 0 9.49219 1.73438 8.04688 4.31641C7.45312 4.56641 6.89844 4.88281 6.375 5.23828C3.80469 6.82031 2.34375 9.44531 2.34375 12.4219C2.34375 16.0312 4.81641 19.043 8.20312 20.2148C8.75781 20.5312 9.38281 20.8125 10.0312 21.0117C9.25781 22.125 8.79688 23.4727 8.79688 24.9062V25.0312C8.79688 25.1836 8.92188 25.3086 9.07422 25.3086H9.49219C9.64453 25.3086 9.76953 25.1836 9.76953 25.0312V24.9062C9.76953 23.1328 10.375 21.4688 11.4141 20.1797C11.4805 20.0859 11.5234 19.9609 11.5234 19.8359V18.5391C11.5234 18.4453 11.4805 18.3516 11.4141 18.2891C9.83203 16.6797 8.90625 14.4844 8.90625 12.1094C8.90625 10.5156 9.35156 9.04688 10.1523 7.78125C11.125 7.60547 12.1406 7.5 13.1875 7.5C14.2344 7.5 15.2188 7.60547 16.1562 7.78125C16.957 9.04688 17.3828 10.5156 17.3828 12.1094C17.3828 14.4844 16.457 16.6797 14.875 18.2891C14.8086 18.3516 14.7656 18.4453 14.7656 18.5391V19.8359C14.7656 19.9609 14.8086 20.0859 14.875 20.1797C15.9141 21.4688 16.5234 23.1328 16.5234 24.9062V25.0312C16.5234 25.1836 16.6484 25.3086 16.8008 25.3086H17.2188C17.3711 25.3086 17.4961 25.1836 17.4961 25.0312V24.9062C17.4961 23.4727 17.0352 22.125 16.2617 21.0117C16.7969 20.7617 17.2969 20.4453 17.7578 20.0859C17.9805 20.6172 18.125 21.1875 18.125 21.7969V21.9219C18.125 22.0742 18.25 22.1992 18.3945 22.1992H18.8203C18.9727 22.1992 19.0977 22.0742 19.0977 21.9219V21.7969C19.0977 20.9766 18.9219 20.1953 18.5703 19.4648C19.0312 19.1484 19.457 18.793 19.8359 18.3984C21.7031 16.6797 22.5641 14.0547 22.5641 11.0781C22.5641 10.2266 22.4688 9.41406 22.2819 8.60156C22.2819 8.60156 22.2819 10.1651 22.2819 10.1651Z"/></svg>` },
+                { id: 'ms365', name: 'Microsoft 365', price: 2740, currency: 'JPY', icon: `<svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11.13 11.13H1.05V1.05h10.08v10.08zm.84-10.08v10.08h10.08V1.05H11.97zM1.05 12.87h10.08v10.08H1.05V12.87zm10.92 0h10.08v10.08H11.97V12.87z"/></svg>` },
+                { id: 'cursor', name: 'Cursor', price: 40, currency: 'USD', icon: `<svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>` },
+                { id: 'github', name: 'Github', price: 4, currency: 'USD', icon: `<svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>` },
+                { id: 'google-workspace', name: 'Google Workspace', price: 1900, currency: 'JPY', icon: `<svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.18,15.68h0c-1.89,0-3.62-1.07-4.22-2.73h4.22v-2.31h-6.73c-.11-.63-.16-1.28-.16-1.95s.05-1.32.16-1.95h6.73v-2.31h-4.22c.6-1.66,2.33-2.73,4.22-2.73,1.07,0,2.05.39,2.78,1.06l1.64-1.64c-1.18-1.1-2.79-1.78-4.42-1.78-2.69,0-5.06,1.52-6.19,3.81h-2.27v2.31h1.96c-.06.65-.09,1.3-.09,1.95s.03,1.3,.09,1.95h-1.96v2.31h2.27c1.13,2.29,3.5,3.81,6.19,3.81,1.63,0,3.24-.68,4.42-1.78l-1.64-1.64c-.73.67-1.71,1.06-2.78,1.06Z"/></svg>` },
             ];
             
             const serviceSelectionContainer = document.getElementById('service-selection');
@@ -250,9 +315,9 @@
                 const label = document.createElement('label');
                 label.className = "flex items-center space-x-3 bg-gray-800 p-3 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors";
                 label.innerHTML = `
-                    <input type="checkbox" id="${service.id}" data-price="${service.price}" data-currency="${service.currency}" class="service-checkbox h-5 w-5 rounded bg-gray-700 border-gray-600 text-purple-600 focus:ring-purple-500">
+                    <input type="checkbox" id="${service.id}" data-price="${service.price}" data-currency="${service.currency}" class="service-checkbox h-4 w-4 sm:h-5 sm:w-5 rounded bg-gray-700 border-gray-600 text-purple-600 focus:ring-purple-500">
                     ${service.icon}
-                    <span class="text-white font-medium">${service.name}</span>
+                    <span class="text-white font-medium text-sm sm:text-base">${service.name}</span>
                 `;
                 serviceSelectionContainer.appendChild(label);
             });
