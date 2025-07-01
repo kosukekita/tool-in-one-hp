@@ -100,13 +100,13 @@
         /* レスポンシブなTool in Oneボックスのサイズ */
         .tool-in-one-box {
             width: 12rem;
-            height: 8rem;
+            height: 6rem;
         }
         
         @media (min-width: 640px) {
             .tool-in-one-box {
                 width: 13rem;
-                height: 13rem;
+                height: 10rem;
             }
         }
         
@@ -260,17 +260,20 @@
                     <div class="w-full max-w-sm xl:w-1/4 p-4 lg:p-6 xl:p-8 bg-gray-800 rounded-2xl border border-gray-700 space-y-3 lg:space-y-4 xl:space-y-6 relative">
                          <div class="absolute -top-4 -left-4 w-16 h-16 cosmic-gradient-bg rounded-full opacity-20 blur-2xl"></div>
                         <p class="text-center font-bold text-base lg:text-lg text-white">各種サービス</p>
-                        <!-- ChatGPT Logo -->
-                        <div class="flex items-center space-x-3 lg:space-x-4 p-3 lg:p-4 bg-gray-900 rounded-lg">
-                            <svg class="w-6 h-6 lg:w-8 lg:h-8 text-white flex-shrink-0" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 10.1651C22.4578 9.2423 22.5641 8.29062 22.5641 7.31953C22.5641 3.23047 19.3336 0 15.2445 0C12.1289 0 9.49219 1.73438 8.04688 4.31641C7.45312 4.56641 6.89844 4.88281 6.375 5.23828C3.80469 6.82031 2.34375 9.44531 2.34375 12.4219C2.34375 16.0312 4.81641 19.043 8.20312 20.2148C8.75781 20.5312 9.38281 20.8125 10.0312 21.0117C9.25781 22.125 8.79688 23.4727 8.79688 24.9062V25.0312C8.79688 25.1836 8.92188 25.3086 9.07422 25.3086H9.49219C9.64453 25.3086 9.76953 25.1836 9.76953 25.0312V24.9062C9.76953 23.1328 10.375 21.4688 11.4141 20.1797C11.4805 20.0859 11.5234 19.9609 11.5234 19.8359V18.5391C11.5234 18.4453 11.4805 18.3516 11.4141 18.2891C9.83203 16.6797 8.90625 14.4844 8.90625 12.1094C8.90625 10.5156 9.35156 9.04688 10.1523 7.78125C11.125 7.60547 12.1406 7.5 13.1875 7.5C14.2344 7.5 15.2188 7.60547 16.1562 7.78125C16.957 9.04688 17.3828 10.5156 17.3828 12.1094C17.3828 14.4844 16.457 16.6797 14.875 18.2891C14.8086 18.3516 14.7656 18.4453 14.7656 18.5391V19.8359C14.7656 19.9609 14.8086 20.0859 14.875 20.1797C15.9141 21.4688 16.5234 23.1328 16.5234 24.9062V25.0312C16.5234 25.1836 16.6484 25.3086 16.8008 25.3086H17.2188C17.3711 25.3086 17.4961 25.1836 17.4961 25.0312V24.9062C17.4961 23.4727 17.0352 22.125 16.2617 21.0117C16.7969 20.7617 17.2969 20.4453 17.7578 20.0859C17.9805 20.6172 18.125 21.1875 18.125 21.7969V21.9219C18.125 22.0742 18.25 22.1992 18.3945 22.1992H18.8203C18.9727 22.1992 19.0977 22.0742 19.0977 21.9219V21.7969C19.0977 20.9766 18.9219 20.1953 18.5703 19.4648C19.0312 19.1484 19.457 18.793 19.8359 18.3984C21.7031 16.6797 22.5641 14.0547 22.5641 11.0781C22.5641 10.2266 22.4688 9.41406 22.2819 8.60156C22.2819 8.60156 22.2819 10.1651 22.2819 10.1651Z"/></svg>
-                            <span class="font-semibold text-white text-sm lg:text-base">ChatGPT</span>
-                        </div>
-                        <!-- Microsoft 365 Logo -->
-                        <div class="flex items-center space-x-3 lg:space-x-4 p-3 lg:p-4 bg-gray-900 rounded-lg">
-                           <svg class="w-6 h-6 lg:w-8 lg:h-8 text-white flex-shrink-0" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.13 11.13H1.05V1.05h10.08v10.08zm.84-10.08v10.08h10.08V1.05H11.97zM1.05 12.87h10.08v10.08H1.05V12.87zm10.92 0h10.08v10.08H11.97V12.87z"/>
-                           </svg>
-                           <span class="font-semibold text-white text-sm lg:text-base">Microsoft 365</span>
+                        <!-- スマホでは横並び、デスクトップでは縦並び -->
+                        <div class="flex flex-row lg:flex-col space-x-2 lg:space-x-0 lg:space-y-3 xl:space-y-4">
+                            <!-- ChatGPT Logo -->
+                            <div class="flex items-center space-x-2 lg:space-x-3 xl:space-x-4 p-2 lg:p-3 xl:p-4 bg-gray-900 rounded-lg flex-1 lg:flex-none">
+                                <svg class="w-5 h-5 lg:w-6 xl:w-8 lg:h-6 xl:h-8 text-white flex-shrink-0" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 10.1651C22.4578 9.2423 22.5641 8.29062 22.5641 7.31953C22.5641 3.23047 19.3336 0 15.2445 0C12.1289 0 9.49219 1.73438 8.04688 4.31641C7.45312 4.56641 6.89844 4.88281 6.375 5.23828C3.80469 6.82031 2.34375 9.44531 2.34375 12.4219C2.34375 16.0312 4.81641 19.043 8.20312 20.2148C8.75781 20.5312 9.38281 20.8125 10.0312 21.0117C9.25781 22.125 8.79688 23.4727 8.79688 24.9062V25.0312C8.79688 25.1836 8.92188 25.3086 9.07422 25.3086H9.49219C9.64453 25.3086 9.76953 25.1836 9.76953 25.0312V24.9062C9.76953 23.1328 10.375 21.4688 11.4141 20.1797C11.4805 20.0859 11.5234 19.9609 11.5234 19.8359V18.5391C11.5234 18.4453 11.4805 18.3516 11.4141 18.2891C9.83203 16.6797 8.90625 14.4844 8.90625 12.1094C8.90625 10.5156 9.35156 9.04688 10.1523 7.78125C11.125 7.60547 12.1406 7.5 13.1875 7.5C14.2344 7.5 15.2188 7.60547 16.1562 7.78125C16.957 9.04688 17.3828 10.5156 17.3828 12.1094C17.3828 14.4844 16.457 16.6797 14.875 18.2891C14.8086 18.3516 14.7656 18.4453 14.7656 18.5391V19.8359C14.7656 19.9609 14.8086 20.0859 14.875 20.1797C15.9141 21.4688 16.5234 23.1328 16.5234 24.9062V25.0312C16.5234 25.1836 16.6484 25.3086 16.8008 25.3086H17.2188C17.3711 25.3086 17.4961 25.1836 17.4961 25.0312V24.9062C17.4961 23.4727 17.0352 22.125 16.2617 21.0117C16.7969 20.7617 17.2969 20.4453 17.7578 20.0859C17.9805 20.6172 18.125 21.1875 18.125 21.7969V21.9219C18.125 22.0742 18.25 22.1992 18.3945 22.1992H18.8203C18.9727 22.1992 19.0977 22.0742 19.0977 21.9219V21.7969C19.0977 20.9766 18.9219 20.1953 18.5703 19.4648C19.0312 19.1484 19.457 18.793 19.8359 18.3984C21.7031 16.6797 22.5641 14.0547 22.5641 11.0781C22.5641 10.2266 22.4688 9.41406 22.2819 8.60156C22.2819 8.60156 22.2819 10.1651 22.2819 10.1651Z"/></svg>
+                                <span class="font-semibold text-white text-xs lg:text-sm xl:text-base">ChatGPT</span>
+                            </div>
+                            <!-- Microsoft 365 Logo -->
+                            <div class="flex items-center space-x-2 lg:space-x-3 xl:space-x-4 p-2 lg:p-3 xl:p-4 bg-gray-900 rounded-lg flex-1 lg:flex-none">
+                               <svg class="w-5 h-5 lg:w-6 xl:w-8 lg:h-6 xl:h-8 text-white flex-shrink-0" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.13 11.13H1.05V1.05h10.08v10.08zm.84-10.08v10.08h10.08V1.05H11.97zM1.05 12.87h10.08v10.08H1.05V12.87zm10.92 0h10.08v10.08H11.97V12.87z"/>
+                               </svg>
+                               <span class="font-semibold text-white text-xs lg:text-sm xl:text-base">Microsoft 365</span>
+                            </div>
                         </div>
                         <!-- "and more..." はデスクトップのみ表示 -->
                         <div class="text-center pt-2 hidden lg:block"><p class="text-gray-400 text-sm">and more...</p></div>
@@ -291,18 +294,18 @@
                     <div class="w-full max-w-sm xl:w-1/4 p-4 lg:p-6 xl:p-8 bg-gray-800 rounded-2xl border border-gray-700 space-y-3 lg:space-y-4 xl:space-y-6 relative">
                         <div class="absolute -top-4 -right-4 w-16 h-16 cosmic-gradient-bg rounded-full opacity-20 blur-2xl"></div>
                         <!-- One Email Address -->
-                        <div class="p-3 lg:p-4 bg-gray-900 rounded-lg text-center">
-                            <svg class="w-6 h-6 lg:w-8 lg:h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <div class="p-2 lg:p-4 bg-gray-900 rounded-lg text-center">
+                            <svg class="hidden sm:block w-6 h-6 lg:w-8 lg:h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             <span class="font-semibold text-white text-sm lg:text-base">一つのメールアドレス</span>
                         </div>
                         <!-- One JPY Payment -->
-                        <div class="p-3 lg:p-4 bg-gray-900 rounded-lg text-center">
-                            <svg class="w-6 h-6 lg:w-8 lg:h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8l3 5m0 0l3-5m-3 5v4m-3-5h6.062C17.24 8 17.112 11.533 15 13.653c-.703.702-1.623 1.054-2.73 1.152A5.963 5.963 0 019 14.5c-3.314 0-6-2.686-6-6s2.686-6 6-6c1.657 0 3.157.672 4.243 1.757"></path></svg>
+                        <div class="p-2 lg:p-4 bg-gray-900 rounded-lg text-center">
+                            <svg class="hidden sm:block w-6 h-6 lg:w-8 lg:h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8l3 5m0 0l3-5m-3 5v4m-3-5h6.062C17.24 8 17.112 11.533 15 13.653c-.703.702-1.623 1.054-2.73 1.152A5.963 5.963 0 019 14.5c-3.314 0-6-2.686-6-6s2.686-6 6-6c1.657 0 3.157.672 4.243 1.757"></path></svg>
                             <span class="font-semibold text-white text-sm lg:text-base">１回の円払い</span>
                         </div>
                         <!-- User Collaboration -->
-                        <div class="p-3 lg:p-4 bg-gray-900 rounded-lg text-center">
-                            <svg class="w-6 h-6 lg:w-8 lg:h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.93M9 21a6 6 0 01-6-6v-1a6 6 0 016-6v1a6 6 0 016 6v-1a6 6 0 01-6-6z"></path></svg>
+                        <div class="p-2 lg:p-4 bg-gray-900 rounded-lg text-center">
+                            <svg class="hidden sm:block w-6 h-6 lg:w-8 lg:h-8 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.93M9 21a6 6 0 01-6-6v-1a6 6 0 016-6v1a6 6 0 016 6v-1a6 6 0 01-6-6z"></path></svg>
                             <span class="font-semibold text-white text-sm lg:text-base">ユーザー同士の連携</span>
                         </div>
                     </div>
