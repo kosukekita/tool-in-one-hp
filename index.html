@@ -36,9 +36,19 @@
         
         /* 法的表記セクションは高さを自動調整 */
         #legal {
-            min-height: auto;
-            padding-top: 8rem; /* ヘッダーの高さを考慮 */
-            padding-bottom: 4rem;
+            min-height: 100vh;
+            height: auto;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        #legal-content {
+            width: 430px;
+            max-width: 430px;
+            margin: 0 auto;
+            padding-top: 5rem;
         }
 
         /* ルビ（ふりがな）のスタイル調整 */
@@ -333,79 +343,85 @@
 
         <!-- 特定商取引法に基づく表記セクション -->
         <section id="legal" class="swipe-section bg-gray-900">
-            <div class="container mx-auto px-4 lg:px-6">
+            <div id="legal-content">
                 <div class="max-w-3xl mx-auto">
-                    <h2 class="text-2xl lg:text-3xl font-bold text-white text-center mb-8">特定商取引法に基づく表記</h2>
-                    <div class="bg-gray-800 p-6 sm:p-8 rounded-2xl border border-gray-700 text-gray-300 space-y-6">
+                    <h2 class="text-xl lg:text-2xl font-bold text-white text-center mb-3">特定商取引法に基づく表記</h2>
+                    <div class="bg-gray-800 p-3 sm:p-4 rounded-xl border border-gray-700 text-gray-300 space-y-1">
                         
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">事業者名</h3>
-                            <p>Tool in One</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-2">
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">事業者名</h3>
+                                <p class="text-xs">Tool in One</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">所在地</h3>
+                                <p class="text-xs">お問い合わせフォームまたはメールにてご請求いただければ、遅滞なく開示いたします。</p>
+                            </div>
                         </div>
                         
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">所在地</h3>
-                            <p>お問い合わせフォームまたはメールにてご請求いただければ、遅滞なく開示いたします。</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-2">
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">電話番号</h3>
+                                <p class="text-xs">お問い合わせフォームまたはメールにてご請求いただければ、遅滞なく開示いたします。</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">メールアドレス</h3>
+                                <p class="text-xs">contact@tool-in-one.com</p>
+                            </div>
                         </div>
                         
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">電話番号</h3>
-                            <p>お問い合わせフォームまたはメールにてご請求いただければ、遅滞なく開示いたします。</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-2">
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">運営統括責任者</h3>
+                                <p class="text-xs">喜多洸介</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">お支払い方法</h3>
+                                <p class="text-xs">クレジットカード決済 (Visa, Mastercard, JCB等)</p>
+                            </div>
                         </div>
                         
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">メールアドレス</h3>
-                            <p>contact@tool-in-one.com</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-2">
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">追加料金</h3>
+                                <p class="text-xs">送料：発生しません / 消費税：表示価格に含む</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">支払い時期</h3>
+                                <p class="text-xs">ご注文時にお支払いが確定します。</p>
+                            </div>
                         </div>
                         
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">運営統括責任者</h3>
-                            <p>喜多洸介</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">追加料金</h3>
-                            <ul class="list-disc list-inside space-y-1">
-                                <li>送料：役務の提供のため、発生しません。</li>
-                                <li>消費税：表示価格はすべて消費税込みです。</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">お支払い方法</h3>
-                            <p>クレジットカード決済 (Stripe)</p>
-                            <p class="text-sm text-gray-400 mt-1">(利用可能なカードブランド: Visa, Mastercard, American Express, JCB, Diners Club, Discover)</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">支払い時期</h3>
-                            <p>ご注文時にお支払いが確定します。</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">商品の引渡し時期</h3>
-                            <p>お支払い手続き完了後、登録いただいたメールアドレスを元に、弊社で各種サービスに登録後にご利用いただけます。（２４時間以内）</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-2">返品・交換・キャンセルについて</h3>
-                            <p>商品の性質上、ご購入後の返金・返品はできかねます。あらかじめ、商品説明にて内容をご確認の上、ご購入ください。</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-2">
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">商品の引渡し時期</h3>
+                                <p class="text-xs">お支払い手続き完了後、登録いただいたメールアドレスを元に、弊社で各種サービスに登録後にご利用いただけます。（２４時間以内）</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-sm font-semibold text-white mb-0.5">返品・交換・キャンセル</h3>
+                                <p class="text-xs">商品の性質上、ご購入後の返金・返品はできかねます。</p>
+                            </div>
                         </div>
 
                     </div>
                 </div>
             </div>
+            
+            <!-- フッター -->
+            <footer class="bg-gray-900 text-center py-4 border-t border-gray-800 mt-auto">
+                <div class="container mx-auto px-4">
+                    <nav class="flex justify-center space-x-4 mb-4">
+                        <a href="#legal" class="text-gray-400 hover:text-white transition-colors text-sm">特定商取引法に基づく表記</a>
+                    </nav>
+                    <p class="text-gray-500 text-xs">&copy; 2024 Tool in One. All Rights Reserved.</p>
+                </div>
+            </footer>
         </section>
-        
-        <!-- フッター -->
-        <footer class="bg-gray-900 text-center py-6 border-t border-gray-800">
-            <div class="container mx-auto px-4">
-                <nav class="flex justify-center space-x-4 mb-4">
-                     <a href="#legal" class="text-gray-400 hover:text-white transition-colors text-sm">特定商取引法に基づく表記</a>
-                </nav>
-                <p class="text-gray-500 text-xs">&copy; 2024 Tool in One. All Rights Reserved.</p>
-            </div>
-        </footer>
     </div>
     
     <script>
