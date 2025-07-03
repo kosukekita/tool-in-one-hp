@@ -11,6 +11,17 @@ permissions:
   pages: write
   id-token: write
 
+deploy:
+  needs: build # buildジョブが完了してから実行される
+  runs-on: ubuntu-latest
+  environment: # この部分を確認！
+    name: github-pages
+    url: ${{ steps.deployment.outputs.page_url }}
+  steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
 jobs:
   build:
 
