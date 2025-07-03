@@ -16,7 +16,7 @@
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            overflow: hidden; /* Prevent default scrollbars */
+            overflow-x: hidden; /* 横スクロールを防止 */
         }
         
         .swipe-container {
@@ -32,6 +32,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        
+        /* 法的表記セクションは高さを自動調整 */
+        #legal {
+            min-height: auto;
+            padding-top: 8rem; /* ヘッダーの高さを考慮 */
+            padding-bottom: 4rem;
         }
 
         /* ルビ（ふりがな）のスタイル調整 */
@@ -107,50 +114,6 @@
         /* レスポンシブなTool in Oneボックスのサイズ */
         .tool-in-one-box {
             width: 12rem;
-            height: 6rem;
-        }
-        
-        @media (min-width: 640px) {
-            .tool-in-one-box {
-                width: 13rem;
-                height: 10rem;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .tool-in-one-box {
-                width: 15rem;
-                height: 15rem;
-            }
-        }
-
-        /* レスポンシブなテキストサイズ */
-        .hero-title {
-            font-size: clamp(2.25rem, 5vw, 4.5rem);
-        }
-        
-        .section-title {
-            font-size: clamp(1.5rem, 4vw, 2.25rem);
-        }
-        
-        .tool-in-one-text {
-            font-size: clamp(1.25rem, 3vw, 2.25rem);
-        }
-
-        /* レスポンシブな矢印の回転 */
-        .arrow-mobile {
-            transform: rotate(90deg);
-        }
-        
-        @media (min-width: 1024px) {
-            .arrow-mobile {
-                transform: rotate(0deg);
-            }
-        }
-
-        /* レスポンシブなTool in Oneボックスのサイズ */
-        .tool-in-one-box {
-            width: 12rem;
             height: 8rem;
         }
         
@@ -194,6 +157,7 @@
                 <a href="#hero" class="text-gray-300 hover:text-white transition-colors">ホーム</a>
                 <a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors">仕組み</a>
                 <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">料金</a>
+                <a href="#legal" class="text-gray-300 hover:text-white transition-colors">特定商取引法に基づく表記</a>
             </nav>
             
             <!-- デスクトップ問い合わせボタン -->
@@ -225,6 +189,7 @@
                 <a href="#hero" class="block text-gray-300 hover:text-white transition-colors py-2">ホーム</a>
                 <a href="#how-it-works" class="block text-gray-300 hover:text-white transition-colors py-2">仕組み</a>
                 <a href="#pricing" class="block text-gray-300 hover:text-white transition-colors py-2">料金</a>
+                <a href="#legal" class="block text-gray-300 hover:text-white transition-colors py-2">特定商取引法に基づく表記</a>
             </nav>
             <a href="mailto:contact@tool-in-one.com?subject=Tool in One についてのお問い合わせ&body=Tool in Oneについて詳しく知りたいです。" class="w-full mt-8 cosmic-gradient-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity block text-center">
                 問い合わせ
@@ -232,7 +197,7 @@
         </div>
     </div>
 
-    <main class="swipe-container">
+    <div class="swipe-container">
         <!-- ヒーローセクション -->
         <section id="hero" class="swipe-section text-center overflow-hidden">
             <div class="absolute inset-0 cosmic-gradient-bg opacity-30 blur-3xl"></div>
@@ -346,9 +311,6 @@
                             <h4 class="text-lg lg:text-xl font-bold text-white mb-4">2. ご利用終了日を選択</h4>
                             <div class="relative">
                                 <input type="date" id="end-date" class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 pr-10 text-white focus:ring-2 focus:ring-purple-500 focus:outline-none">
-                                <!-- <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                </svg> -->
                             </div>
                         </div>
                     </div>
@@ -369,7 +331,82 @@
             </div>
         </section>
 
-    </main>
+        <!-- 特定商取引法に基づく表記セクション -->
+        <section id="legal" class="swipe-section bg-gray-900">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-white text-center mb-8">特定商取引法に基づく表記</h2>
+                    <div class="bg-gray-800 p-6 sm:p-8 rounded-2xl border border-gray-700 text-gray-300 space-y-6">
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">事業者名</h3>
+                            <p>Tool in One</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">所在地</h3>
+                            <p>お問い合わせフォームまたはメールにてご請求いただければ、遅滞なく開示いたします。</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">電話番号</h3>
+                            <p>お問い合わせフォームまたはメールにてご請求いただければ、遅滞なく開示いたします。</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">メールアドレス</h3>
+                            <p>contact@tool-in-one.com</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">運営統括責任者</h3>
+                            <p>喜多洸介</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">追加料金</h3>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>送料：役務の提供のため、発生しません。</li>
+                                <li>消費税：表示価格はすべて消費税込みです。</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">お支払い方法</h3>
+                            <p>クレジットカード決済 (Stripe)</p>
+                            <p class="text-sm text-gray-400 mt-1">(利用可能なカードブランド: Visa, Mastercard, American Express, JCB, Diners Club, Discover)</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">支払い時期</h3>
+                            <p>ご注文時にお支払いが確定します。</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">商品の引渡し時期</h3>
+                            <p>お支払い手続き完了後、登録いただいたメールアドレスを元に、弊社で各種サービスに登録後にご利用いただけます。（２４時間以内）</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">返品・交換・キャンセルについて</h3>
+                            <p>商品の性質上、ご購入後の返金・返品はできかねます。あらかじめ、商品説明にて内容をご確認の上、ご購入ください。</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- フッター -->
+        <footer class="bg-gray-900 text-center py-6 border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <nav class="flex justify-center space-x-4 mb-4">
+                     <a href="#legal" class="text-gray-400 hover:text-white transition-colors text-sm">特定商取引法に基づく表記</a>
+                </nav>
+                <p class="text-gray-500 text-xs">&copy; 2024 Tool in One. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -377,32 +414,33 @@
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const allLinks = document.querySelectorAll('a[href^="#"]');
 
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.add('open');
-            });
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+            mobileMenuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
 
-            mobileMenuClose.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-            });
-
-            // Close menu when clicking on a link
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('open');
-                });
-            });
-
-            // --- Page scrolling ---
-            const navLinks = document.querySelectorAll('header nav a, header a.text-xl, header a.text-2xl');
-            navLinks.forEach(link => {
+            // --- Smooth Scrolling for All Anchor Links ---
+            allLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
                     const targetSection = document.querySelector(targetId);
                     if(targetSection) {
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        // For swipe container, we scroll the container itself
+                        const swipeContainer = document.querySelector('.swipe-container');
+                        if (swipeContainer.contains(targetSection)) {
+                             targetSection.scrollIntoView({ behavior: 'smooth' });
+                        } else {
+                            // For elements outside the swipe container (like footer links to sections inside)
+                             window.scrollTo({
+                                top: targetSection.offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
                     }
                 });
             });
@@ -412,7 +450,7 @@
                 { id: 'chatgpt', name: 'ChatGPT', price: 30, currency: 'USD', icon: `<svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 10.1651C22.4578 9.2423 22.5641 8.29062 22.5641 7.31953C22.5641 3.23047 19.3336 0 15.2445 0C12.1289 0 9.49219 1.73438 8.04688 4.31641C7.45312 4.56641 6.89844 4.88281 6.375 5.23828C3.80469 6.82031 2.34375 9.44531 2.34375 12.4219C2.34375 16.0312 4.81641 19.043 8.20312 20.2148C8.75781 20.5312 9.38281 20.8125 10.0312 21.0117C9.25781 22.125 8.79688 23.4727 8.79688 24.9062V25.0312C8.79688 25.1836 8.92188 25.3086 9.07422 25.3086H9.49219C9.64453 25.3086 9.76953 25.1836 9.76953 25.0312V24.9062C9.76953 23.1328 10.375 21.4688 11.4141 20.1797C11.4805 20.0859 11.5234 19.9609 11.5234 19.8359V18.5391C11.5234 18.4453 11.4805 18.3516 11.4141 18.2891C9.83203 16.6797 8.90625 14.4844 8.90625 12.1094C8.90625 10.5156 9.35156 9.04688 10.1523 7.78125C11.125 7.60547 12.1406 7.5 13.1875 7.5C14.2344 7.5 15.2188 7.60547 16.1562 7.78125C16.957 9.04688 17.3828 10.5156 17.3828 12.1094C17.3828 14.4844 16.457 16.6797 14.875 18.2891C14.8086 18.3516 14.7656 18.4453 14.7656 18.5391V19.8359C14.7656 19.9609 14.8086 20.0859 14.875 20.1797C15.9141 21.4688 16.5234 23.1328 16.5234 24.9062V25.0312C16.5234 25.1836 16.6484 25.3086 16.8008 25.3086H17.2188C17.3711 25.3086 17.4961 25.1836 17.4961 25.0312V24.9062C17.4961 23.4727 17.0352 22.125 16.2617 21.0117C16.7969 20.7617 17.2969 20.4453 17.7578 20.0859C17.9805 20.6172 18.125 21.1875 18.125 21.7969V21.9219C18.125 22.0742 18.25 22.1992 18.3945 22.1992H18.8203C18.9727 22.1992 19.0977 22.0742 19.0977 21.9219V21.7969C19.0977 20.9766 18.9219 20.1953 18.5703 19.4648C19.0312 19.1484 19.457 18.793 19.8359 18.3984C21.7031 16.6797 22.5641 14.0547 22.5641 11.0781C22.5641 10.2266 22.4688 9.41406 22.2819 8.60156C22.2819 8.60156 22.2819 10.1651 22.2819 10.1651Z"/></svg>` },
                 { id: 'ms365', name: 'Microsoft 365', price: 2740, currency: 'JPY', icon: `<svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11.13 11.13H1.05V1.05h10.08v10.08zm.84-10.08v10.08h10.08V1.05H11.97zM1.05 12.87h10.08v10.08H1.05V12.87zm10.92 0h10.08v10.08H11.97V12.87z"/></svg>` },
                 { id: 'cursor', name: 'Cursor', price: 40, currency: 'USD', icon: `<svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>` },
-                { id: 'github', name: 'Github', price: 4, currency: 'USD', icon: `<svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.236 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>` },
+                { id: 'github', name: 'Github', price: 4, currency: 'USD', icon: `<svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>` },
                 { id: 'google-workspace', name: 'Google Workspace', price: 1900, currency: 'JPY', icon: `<svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.18,15.68h0c-1.89,0-3.62-1.07-4.22-2.73h4.22v-2.31h-6.73c-.11-.63-.16-1.28-.16-1.95s.05-1.32.16-1.95h6.73v-2.31h-4.22c.6-1.66,2.33-2.73,4.22-2.73,1.07,0,2.05.39,2.78,1.06l1.64-1.64c-1.18-1.1-2.79-1.78-4.42-1.78-2.69,0-5.06,1.52-6.19,3.81h-2.27v2.31h1.96c-.06.65-.09,1.3-.09,1.95s.03,1.3,.09,1.95h-1.96v2.31h2.27c1.13,2.29,3.5,3.81,6.19,3.81,1.63,0,3.24-.68,4.42-1.78l-1.64-1.64c-.73.67-1.71,1.06-2.78,1.06Z"/></svg>` },
             ];
             
@@ -509,7 +547,16 @@
                 const priceValue = priceDisplay.textContent;
                 
                 if (selectedServices.length === 0 || !endDateValue) {
-                    alert('サービスと終了日を選択してください。');
+                    // Use a custom modal or a less intrusive notification instead of alert()
+                    // For this example, we'll just log to console and maybe show a temporary message.
+                    const details = document.getElementById('calculation-details');
+                    details.textContent = 'エラー: サービスと終了日を選択してください。';
+                    details.style.color = '#f87171'; // red-400
+                    setTimeout(() => {
+                        details.textContent = '';
+                        details.style.color = '';
+                        calculatePrice(); // Restore original message
+                    }, 3000);
                     return;
                 }
                 
@@ -521,18 +568,7 @@
                 
                 const emailSubject = encodeURIComponent('Tool in One 料金見積もりについて');
                 const emailBody = encodeURIComponent(
-                    `Tool in Oneについて、以下の内容でお問い合わせいたします。
-
-【選択されたサービス】
-${selectedServiceNames}
-
-【ご利用終了日】
-${endDateValue}
-
-【見積もり料金】
-${priceValue}
-
-詳細についてご相談させていただけますでしょうか。`
+                    `Tool in Oneについて、以下の内容でお問い合わせいたします。\n\n【選択されたサービス】\n${selectedServiceNames}\n\n【ご利用終了日】\n${endDateValue}\n\n【見積もり料金】\n${priceValue}\n\n詳細についてご相談させていただけますでしょうか。`
                 );
                 
                 // Open email client
